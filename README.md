@@ -5,7 +5,7 @@
 [![Test coverage][coveralls-image]][coveralls-url]
 [![Gittip][gittip-image]][gittip-url]
 
-Upper case the first character of a string.
+Upper case the first character of a string. Also handles non-string entities, such as objects with a `toString` property, numbers and booleans. Empty values (`null` and `undefined`) will come out as an empty string.
 
 ## Installation
 
@@ -16,9 +16,10 @@ npm install upper-case-first --save
 ## Usage
 
 ```js
-var upperCase = require('upper-case-first');
+var upperCaseFirst = require('upper-case-first');
 
-upperCase('string'); //=> "String"
+upperCaseFirst(null);     //=> ""
+upperCaseFirst('string'); //=> "String"
 ```
 
 ## License
